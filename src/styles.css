@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+/* PrimeNG theme and core styles */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+/* CSS Layer Configuration for Tailwind and PrimeNG */
+@layer primeng,tailwind-base, tailwind-utilities;
+
+/* Base Layer for Tailwind */
+@layer tailwind-base {
+    @tailwind base;
+}
+
+/* PrimeNG Layer (no need to modify as the imports handle this) */
+@layer primeng {}
+
+/* Components and Utilities Layer for Tailwind */
+@layer tailwind-utilities {
+    @tailwind components;
+    @tailwind utilities;
+}

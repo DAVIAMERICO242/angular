@@ -1,0 +1,19 @@
+<div>
+    <app-child>
+    </app-child>
+    <div>
+        Quantidade de cidades no pai {{cities?.length}}
+    </div>
+    <button (click)="changeCidade()" [ngClass]="{
+        'bg-white':true,
+        'text-black':true,
+        'border-solid':true,
+        'border-gray-200':true,
+        'p-[10px]':true,
+        'border':true,
+        'rounded-[10px]':true,
+        'text-[14px]':true
+    }">
+        Zerar cidades pelo pai
+    </button>
+</div>
