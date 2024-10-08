@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output, OutputEmitterRef } from '@angular/core';
 import { City, GlobalService} from '../../../../services/GlobalService';
 import { CommonModule } from '@angular/common';
+import { TableModule } from 'primeng/table';
 
 @Component({
   selector: 'app-child',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,TableModule],
   templateUrl: './child.component.html',
   styleUrl: './child.component.css'
 })

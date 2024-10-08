@@ -28,5 +28,10 @@ export class GlobalService{
         })
     }
 
+    public deleteCity(id:number){
+        const buffer = this.citySubject.getValue();
+        this.citySubject.next(buffer.filter((e)=>e.id!==id))
+    }
+
 
 }

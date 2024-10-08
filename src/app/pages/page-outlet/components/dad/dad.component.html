@@ -16,4 +16,42 @@
     }">
         Zerar cidades pelo pai
     </button>
+
+    <p-button [style]="{'display':'block','margin-top':'10px'}" (onClick)="open=true">
+        Mostrar dados
+    </p-button>
+
+    <p-confirmDialog />
+    <p-dialog header="Dados" [(visible)]="open" [modal]="true">
+        <p-table [tableStyle]="{'width':'400px'}" [value]="cities?.slice(0,20) || []">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Id</th>
+                    <th>Estado</th>
+                    <th>Cidade</th>
+                    <th>Excluir</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-city>
+                <tr>
+                    <td>
+                        {{city.id}}
+                    </td>
+                    <td>
+                        {{city.nome}}
+                    </td>
+                    <td>
+                        {{city.municipio.nome}}
+                    </td>
+                    <td>
+                        <div (click)="confirmarDelecao($event,city.id)" class="pi pi-trash" [style]="{'cursor':'pointer'}">
+    
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+            
+        </p-table>
+    </p-dialog>
+
 </div>

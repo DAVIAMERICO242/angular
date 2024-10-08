@@ -4,12 +4,11 @@ import { Route, Router, RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared.module';
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
-import { DateComponent } from "../page-outlet/components/date/date.component";
 
 @Component({
   selector: 'app-page',
   standalone: true,
-  imports: [RouterModule, SharedModule, FormsModule, DateComponent],
+  imports: [RouterModule, SharedModule, FormsModule],
   templateUrl: './page.component.html',
   styleUrl: './page.component.css'
 })

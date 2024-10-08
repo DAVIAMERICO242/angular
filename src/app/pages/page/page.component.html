@@ -1,8 +1,10 @@
 <p>Componente fixo</p>
-<div>
-    <p-button (click)="navigate()">
-        Ir para about
+<div >
+    <p-button [style]="{
+        'background-color':'red',
+        'text-overflow':'ellipsis',
+    }" (click)="navigate()">
+        Testar contexto
     </p-button>
-    <app-date></app-date>
 </div>
 <router-outlet></router-outlet>
