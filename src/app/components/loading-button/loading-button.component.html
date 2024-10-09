@@ -4,7 +4,7 @@
                                     'pointer-events-none':disabled
 }" >
     <div [style]="{opacity:isLoading?0:1}">
-        {{title}}
+        <ng-content></ng-content>
     </div>
     <div class="pi pi-spin pi-spinner" *ngIf="isLoading" style="font-size: 12px; position: absolute;">
     </div>

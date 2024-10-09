@@ -4,7 +4,9 @@
         <div *ngIf="form.get('loja')?.invalid && form.get('loja')?.dirty">Inválido</div>
         <p-multiSelect [style]="{width:'100%'}" formControlName="selectedTarefas" optionLabel="nome" [options]="tarefas"/>
         <div *ngIf="form.get('selectedTarefas')?.invalid && form.get('selectedTarefas')?.dirty">Inválido</div>
-        <app-loading-button class="w-full mt-2" (click)="submit()" [disabled]="!form.valid" title="Submit"/> 
+        <app-loading-button class="w-full mt-2" (click)="submit()" [disabled]="!form.valid">
+            Submitar
+        </app-loading-button> 
     </form>
 </div>
 
