@@ -1,10 +1,11 @@
-<div (click)="onClick()" [class]="class" [ngClass]="{'rounded-[5px] border border-[#e9ecea] flex items-center justify-center w-fit cursor-pointer text-[12px] py-[10px] px-[20px]':true
+<button [type]="type" (click)="onClick()" [class]="class" [ngClass]="{'border rounded-[5px] border-[#e9ecea] flex items-center justify-center w-fit cursor-pointer text-[12px] py-[10px] px-[20px]':true
                                     ,'opacity-1':!isLoading
-                                    ,'opacity-45':isLoading
+                                    ,'opacity-45':isLoading || disabled,
+                                    'pointer-events-none':disabled
 }" >
     <div [style]="{opacity:isLoading?0:1}">
         {{title}}
     </div>
     <div class="pi pi-spin pi-spinner" *ngIf="isLoading" style="font-size: 12px; position: absolute;">
     </div>
-</div>
+</button>

@@ -1,0 +1,8 @@
+<form (ngSubmit)="submit()" [formGroup]="form" class="w-fit flex flex-col space-y-2 mt-10">
+    <input placeholder="Loja" formControlName="loja"/>
+    <div *ngIf="form.get('loja')?.invalid && form.get('loja')?.dirty">Inválido</div>
+    <p-multiSelect formControlName="selectedTarefas" [style]="{width:'200px'}" optionLabel="nome" [options]="tarefas"/>
+    <div *ngIf="form.get('selectedTarefas')?.invalid && form.get('selectedTarefas')?.dirty">Inválido</div>
+    <app-loading-button [disabled]="!form.valid" title="Submit"/> 
+</form>
+

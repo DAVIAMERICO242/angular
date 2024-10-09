@@ -6,6 +6,7 @@ import { ChildrenComponent } from './pages/page-outlet/components/input-output/c
 import { ParentComponent } from './pages/page-outlet/components/input-output/parent/parent.component';
 import { PrimeNgComponent } from './pages/page-outlet/components/prime-ng/prime-ng/prime-ng.component';
 import { ExampleComponentComponent } from './pages/page-outlet/components/pipes/example-component/example-component.component';
+import { GenericFormComponent } from './pages/page-outlet/components/forms/generic-form/generic-form.component';
 
 export const routes: Routes = [
     {
@@ -27,6 +28,11 @@ export const routes: Routes = [
             {
                 path:'pipes',
                 component:ExampleComponentComponent
+            }
+            ,
+            {
+                path:'forms',
+                component:GenericFormComponent
             }
         ]
     },

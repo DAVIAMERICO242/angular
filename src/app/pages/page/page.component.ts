@@ -34,4 +34,8 @@ export class PageComponent {
    public navigatePipes(){
     this.router.navigate(["/pipes"])
    }
+
+   public navigateForms(){
+    this.router.navigate(["/forms"])
+   }
 }
