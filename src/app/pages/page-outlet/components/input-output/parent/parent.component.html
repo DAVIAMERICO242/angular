@@ -1,0 +1,4 @@
+<p>parent works!</p>
+<div>Propriedade no pai: {{toBeInherited}}</div>
+<app-children  (propagator)="intermediator($event)" [inheritedProp]="toBeInherited">
+</app-children>

@@ -19,7 +19,11 @@ export class PageComponent {
 
    constructor(private router:Router){}
 
-   public navigate(){
+   public navigateAbout(){
     this.router.navigate(["/about"])
+   }
+
+   public navigateInheritance(){
+    this.router.navigate(["/inheritance"])
    }
 }

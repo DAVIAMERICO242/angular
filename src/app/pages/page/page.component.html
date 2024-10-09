@@ -1,10 +1,16 @@
 <p>Componente fixo</p>
-<div >
+<div class="flex flex-col gap-1" >
     <p-button [style]="{
         'background-color':'red',
         'text-overflow':'ellipsis',
-    }" (click)="navigate()">
+    }" (click)="navigateAbout()">
         Testar contexto
+    </p-button>
+    <p-button [style]="{
+        'background-color':'blue',
+        'text-overflow':'ellipsis',
+    }" (click)="navigateInheritance()">
+        Testar comunicação entre pai e filho
     </p-button>
 </div>
 <router-outlet></router-outlet>
