@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ChildComponent } from "../child/child.component";
 import { City, GlobalService} from '../../../../services/GlobalService';
 import { CommonModule } from '@angular/common';
@@ -7,11 +7,14 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialog, ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
+import { InheritedStyleComponent } from "../inherited-style/inherited-style.component";
+import { MultiSelectModule } from 'primeng/multiselect';
+import { LoadingButtonComponent } from "../loading-button/loading-button.component";
 
 @Component({
   selector: 'app-dad',
   standalone: true,
-  imports: [ChildComponent,CommonModule,TableModule,DialogModule,ButtonModule,ConfirmDialogModule],
+  imports: [ChildComponent, CommonModule, TableModule, DialogModule, ButtonModule, ConfirmDialogModule, InheritedStyleComponent, MultiSelectModule, LoadingButtonComponent],
   providers:[GlobalService,ConfirmationService],
   templateUrl: './dad.component.html',
   styleUrl: './dad.component.css'
@@ -21,6 +24,8 @@ export class DadComponent {
 
   public open:boolean = false;
 
+  public loading:boolean = false;
+
   constructor(private globalService:GlobalService,private confirmationService:ConfirmationService){
     this.globalService.city$.subscribe(city => {
       this.cities = city; // Atualiza o valor local para refletir na UI
@@ -29,6 +34,13 @@ export class DadComponent {
 
   ngOnInit(): void {
     this.globalService.getCities()
+  }
+
+  public load(){
+     this.loading = true;
+     setTimeout(()=>{
+      this.loading = false;
+     },1000)
   }
 
   public changeCidade(){

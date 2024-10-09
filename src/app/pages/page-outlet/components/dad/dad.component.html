@@ -4,7 +4,7 @@
     <div>
         Quantidade de cidades no pai {{cities?.length}}
     </div>
-    <button (click)="changeCidade()" [ngClass]="{
+    <button class='mb-0' (click)="changeCidade()" [ngClass]="{
         'bg-white':true,
         'text-black':true,
         'border-solid':true,
@@ -12,17 +12,21 @@
         'p-[10px]':true,
         'border':true,
         'rounded-[10px]':true,
-        'text-[14px]':true
+        'text-[14px]':true,
     }">
         Zerar cidades pelo pai
     </button>
 
-    <p-button [style]="{'display':'block','margin-top':'10px'}" (onClick)="open=true">
+    <app-inherited-style [styleTyped]="{}">
+
+    </app-inherited-style>
+
+    <p-button [style]="{'display':'block','color':true?'green':'red'}"   (onClick)="open=true">
         Mostrar dados
     </p-button>
 
     <p-confirmDialog />
-    <p-dialog header="Dados" [(visible)]="open" [modal]="true">
+    <p-dialog  header="Dados" [(visible)]="open" [modal]="true">
         <p-table [tableStyle]="{'width':'400px'}" [value]="cities?.slice(0,20) || []">
             <ng-template pTemplate="header">
                 <tr>
@@ -53,5 +57,9 @@
             
         </p-table>
     </p-dialog>
+
+    <div class="mt-[10px]">
+        <app-loading-button class="rounded-full bg-purple-800"  (click)="load()" [isLoading]="loading" [title]="'Buscar'"/>
+    </div>
 
 </div>
