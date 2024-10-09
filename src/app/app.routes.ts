@@ -5,6 +5,7 @@ import { PageOutletComponent } from './pages/page-outlet/page-outlet.component';
 import { ChildrenComponent } from './pages/page-outlet/components/input-output/children/children.component';
 import { ParentComponent } from './pages/page-outlet/components/input-output/parent/parent.component';
 import { PrimeNgComponent } from './pages/page-outlet/components/prime-ng/prime-ng/prime-ng.component';
+import { ExampleComponentComponent } from './pages/page-outlet/components/pipes/example-component/example-component.component';
 
 export const routes: Routes = [
     {
@@ -22,6 +23,10 @@ export const routes: Routes = [
             {
                 path:'prime_ng',
                 component:PrimeNgComponent
+            },
+            {
+                path:'pipes',
+                component:ExampleComponentComponent
             }
         ]
     },

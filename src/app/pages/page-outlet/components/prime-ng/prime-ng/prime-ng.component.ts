@@ -7,7 +7,16 @@ import { MultiSelectModule } from 'primeng/multiselect';
   standalone: true,
   imports: [MultiSelectModule,FormsModule],
   templateUrl: './prime-ng.component.html',
-  styleUrl: './prime-ng.component.css'
+  styleUrl: './prime-ng.component.css',
+  styles:[`
+          :host ::ng-deep .ng-star-inserted {
+              font-size: 12px !important;
+          }
+
+          :host ::ng-deep .ng-star-inserted {
+              font-size 12px !important
+          }
+    `]
 })
 export class PrimeNgComponent {
   public data = [{

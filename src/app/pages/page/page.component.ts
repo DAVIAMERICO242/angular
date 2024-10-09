@@ -30,4 +30,8 @@ export class PageComponent {
    public navigatePrimeNG(){
     this.router.navigate(["/prime_ng"])
    }
+
+   public navigatePipes(){
+    this.router.navigate(["/pipes"])
+   }
 }
