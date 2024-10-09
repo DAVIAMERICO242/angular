@@ -1,36 +1,20 @@
 <p>Componente fixo</p>
-<div class="flex flex-col gap-1" >
-    <p-button [style]="{
-        'background-color':'red',
-        'text-overflow':'ellipsis',
-    }" (click)="navigateAbout($event)">
+<div class="space-x-4">
+    <app-loading-button class="bg-red-600 text-white" (action)="navigateAbout()">
         Testar contexto
-    </p-button>
-    <p-button [style]="{
-        'background-color':'blue',
-        'text-overflow':'ellipsis',
-    }" (click)="navigateInheritance($event)">
+    </app-loading-button>
+    <app-loading-button class="bg-green-200" (action)="navigateInheritance()">
         Testar comunicação entre pai e filho
-    </p-button>
-    <p-button [style]="{
-        'background-color':'green',
-        'text-overflow':'ellipsis',
-    }" (click)="navigatePrimeNG($event)">
+    </app-loading-button>
+    <app-loading-button class="bg-blue-500" (action)="navigatePrimeNG()">
         Testar PrimeNG
-    </p-button>
-    <p-button [style]="{
-        'color':'black',
-        'background-color':'white',
-        'text-overflow':'ellipsis',
-    }" (click)="navigatePipes($event)">
+    </app-loading-button>
+    <app-loading-button class="bg-purple-400" (action)="navigatePipes()">
         Testar Pipe
-    </p-button>
-    <p-button [style]="{
-        'color':'black',
-        'background-color':'white',
-        'text-overflow':'ellipsis',
-    }" (click)="navigateForms($event)">
+    </app-loading-button>
+    <app-loading-button class="bg-slate-900 text-white"  (action)="navigateForms()">
         Testar forms
-    </p-button>
+    </app-loading-button>
 </div>
+<div class="mt-10 mb-10 w-full h-[1px] bg-black opacity-[0.2]"></div>
 <router-outlet></router-outlet>

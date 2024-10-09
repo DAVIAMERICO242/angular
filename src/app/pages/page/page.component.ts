@@ -4,11 +4,12 @@ import { Route, Router, RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared.module';
 import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
+import { LoadingButtonComponent } from "../../components/loading-button/loading-button.component";
 
 @Component({
   selector: 'app-page',
   standalone: true,
-  imports: [RouterModule, SharedModule, FormsModule],
+  imports: [RouterModule, SharedModule, FormsModule, LoadingButtonComponent],
   templateUrl: './page.component.html',
   styleUrl: './page.component.css'
 })
@@ -19,28 +20,24 @@ export class PageComponent {
 
    constructor(private router:Router){}
 
-   public navigateAbout($event:MouseEvent){
-    $event.stopPropagation();
+   public navigateAbout(){
     this.router.navigate(["/about"])
    }
 
-   public navigateInheritance($event:MouseEvent){
-    $event.stopPropagation();
+   public navigateInheritance(){
     this.router.navigate(["/inheritance"])
    }
 
-   public navigatePrimeNG($event:MouseEvent){
-    $event.stopPropagation();
+   public navigatePrimeNG(){
+  
     this.router.navigate(["/prime_ng"])
    }
 
-   public navigatePipes($event:MouseEvent){
-    $event.stopPropagation();
+   public navigatePipes(){
     this.router.navigate(["/pipes"])
    }
 
-   public navigateForms($event:MouseEvent){
-    $event.stopPropagation();
+   public navigateForms(){
     this.router.navigate(["/forms"])
    }
 }
