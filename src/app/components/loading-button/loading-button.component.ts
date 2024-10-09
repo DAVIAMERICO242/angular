@@ -13,7 +13,7 @@ export class LoadingButtonComponent {
   @Input() type: "submit" | undefined;
   @Input() class: string = ''; // Nova propriedade para classes adicionais
   @Input() isLoading!:boolean;
-  @Input() title!:string;
+  @Input({required:true}) title!:string;
 
   constructor (){
     
