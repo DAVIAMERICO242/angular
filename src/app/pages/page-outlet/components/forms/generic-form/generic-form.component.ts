@@ -1,8 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MultiSelectModule } from 'primeng/multiselect';
-import { LoadingButtonComponent } from "../../loading-button/loading-button.component";
+import { LoadingButtonComponent } from "../../../../../components/loading-button/loading-button.component";
 import { CommonModule } from '@angular/common';
+import { InputTextModule } from 'primeng/inputtext';
 
 interface Tarefa{
   id:string;
@@ -17,7 +18,7 @@ interface FormModel{
 @Component({
   selector: 'app-generic-form',
   standalone: true,
-  imports: [FormsModule, MultiSelectModule, ReactiveFormsModule, LoadingButtonComponent,CommonModule],
+  imports: [FormsModule, MultiSelectModule, ReactiveFormsModule, LoadingButtonComponent,CommonModule,InputTextModule],
   templateUrl: './generic-form.component.html',
   styleUrl: './generic-form.component.css'
 })
@@ -46,11 +47,17 @@ export class GenericFormComponent implements OnInit {
     })
   }
 
+  public any(){
+    console.log("aaaa")
+  }
+
   public submit(){
+    console.log("tentou")
     if(this.form.valid){
       console.log('submitado')
     }else{
       alert('form inválida')
+      return;
     }
   }
 

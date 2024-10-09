@@ -9,7 +9,7 @@ import { ConfirmDialog, ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
 import { InheritedStyleComponent } from "../inherited-style/inherited-style.component";
 import { MultiSelectModule } from 'primeng/multiselect';
-import { LoadingButtonComponent } from "../loading-button/loading-button.component";
+import { LoadingButtonComponent } from "../../../../components/loading-button/loading-button.component";
 
 @Component({
   selector: 'app-dad',
