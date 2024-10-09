@@ -26,4 +26,8 @@ export class PageComponent {
    public navigateInheritance(){
     this.router.navigate(["/inheritance"])
    }
+
+   public navigatePrimeNG(){
+    this.router.navigate(["/prime_ng"])
+   }
 }

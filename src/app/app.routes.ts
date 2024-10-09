@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { PageOutletComponent } from './pages/page-outlet/page-outlet.component';
 import { ChildrenComponent } from './pages/page-outlet/components/input-output/children/children.component';
 import { ParentComponent } from './pages/page-outlet/components/input-output/parent/parent.component';
+import { PrimeNgComponent } from './pages/page-outlet/components/prime-ng/prime-ng/prime-ng.component';
 
 export const routes: Routes = [
     {
@@ -17,6 +18,10 @@ export const routes: Routes = [
             {
                 path: 'inheritance',
                 component: ParentComponent
+            },
+            {
+                path:'prime_ng',
+                component:PrimeNgComponent
             }
         ]
     },
