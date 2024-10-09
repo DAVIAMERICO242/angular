@@ -3,33 +3,33 @@
     <p-button [style]="{
         'background-color':'red',
         'text-overflow':'ellipsis',
-    }" (click)="navigateAbout()">
+    }" (click)="navigateAbout($event)">
         Testar contexto
     </p-button>
     <p-button [style]="{
         'background-color':'blue',
         'text-overflow':'ellipsis',
-    }" (click)="navigateInheritance()">
+    }" (click)="navigateInheritance($event)">
         Testar comunicação entre pai e filho
     </p-button>
     <p-button [style]="{
         'background-color':'green',
         'text-overflow':'ellipsis',
-    }" (click)="navigatePrimeNG()">
+    }" (click)="navigatePrimeNG($event)">
         Testar PrimeNG
     </p-button>
     <p-button [style]="{
         'color':'black',
         'background-color':'white',
         'text-overflow':'ellipsis',
-    }" (click)="navigatePipes()">
+    }" (click)="navigatePipes($event)">
         Testar Pipe
     </p-button>
     <p-button [style]="{
         'color':'black',
         'background-color':'white',
         'text-overflow':'ellipsis',
-    }" (click)="navigateForms()">
+    }" (click)="navigateForms($event)">
         Testar forms
     </p-button>
 </div>

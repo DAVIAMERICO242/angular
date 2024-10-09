@@ -19,23 +19,28 @@ export class PageComponent {
 
    constructor(private router:Router){}
 
-   public navigateAbout(){
+   public navigateAbout($event:MouseEvent){
+    $event.stopPropagation();
     this.router.navigate(["/about"])
    }
 
-   public navigateInheritance(){
+   public navigateInheritance($event:MouseEvent){
+    $event.stopPropagation();
     this.router.navigate(["/inheritance"])
    }
 
-   public navigatePrimeNG(){
+   public navigatePrimeNG($event:MouseEvent){
+    $event.stopPropagation();
     this.router.navigate(["/prime_ng"])
    }
 
-   public navigatePipes(){
+   public navigatePipes($event:MouseEvent){
+    $event.stopPropagation();
     this.router.navigate(["/pipes"])
    }
 
-   public navigateForms(){
+   public navigateForms($event:MouseEvent){
+    $event.stopPropagation();
     this.router.navigate(["/forms"])
    }
 }
