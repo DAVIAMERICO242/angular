@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ChildComponent } from "../child/child.component";
 import { City, GlobalService} from '../../../../services/GlobalService';
 import { CommonModule } from '@angular/common';
@@ -19,7 +19,7 @@ import { LoadingButtonComponent } from "../loading-button/loading-button.compone
   templateUrl: './dad.component.html',
   styleUrl: './dad.component.css'
 })
-export class DadComponent {
+export class DadComponent implements OnInit {
   public cities:City[] | undefined= undefined;
 
   public open:boolean = false;
@@ -27,7 +27,7 @@ export class DadComponent {
   public loading:boolean = false;
 
   constructor(private globalService:GlobalService,private confirmationService:ConfirmationService){
-    this.globalService.city$.subscribe(city => {
+    this.globalService.city$.subscribe(city => {//toda vez que um next for executado vai cair aqui
       this.cities = city; // Atualiza o valor local para refletir na UI
     });
   }

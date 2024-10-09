@@ -23,9 +23,15 @@ export class GlobalService{
     }
 
     public getCities(){
-        this.http.get<City[]>(this.api).subscribe((cities)=>{
-            this.citySubject.next(cities)
-        })
+        this.http.get<City[]>(this.api).subscribe({
+            next:(cities)=>{
+                this.citySubject.next(cities)
+            },
+            error:(error)=>{//403,401,500,404
+                console.error("ERRO NA REQUISIÇÃO:" + error)
+            }
+        }
+        )
     }
 
     public deleteCity(id:number){
