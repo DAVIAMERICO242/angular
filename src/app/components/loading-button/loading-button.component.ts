@@ -9,7 +9,7 @@ import { Component, EventEmitter, HostBinding, HostListener, Input, Output } fro
   styleUrl: './loading-button.component.css'
 })
 export class LoadingButtonComponent {
-  @Input() action!:()=>void;
+  @Output() action = new EventEmitter<void>();
   @Input() disabled:boolean = false;
   @Input() type: "submit" | undefined;
   @Input() class: string = ''; // Nova propriedade para classes adicionais
@@ -17,6 +17,10 @@ export class LoadingButtonComponent {
 
   constructor (){
     
+  }
+
+  public notifyClick(){
+    this.action.emit();
   }
 
 
