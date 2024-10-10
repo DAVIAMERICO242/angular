@@ -1,3 +1,11 @@
-<p>
+<p ngif>
     O nomero de cidades é {{($cities| async )?.length}}
 </p>
+<ng-container *ngIf="($cities | async)?.length">
+    <div>Primeiras 5 cidades</div>
+    <ul>
+        <li *ngFor="let city of ($cities | async)?.slice(0,5)">
+            Nome: {{city.nome}}
+        </li>
+    </ul>
+</ng-container>
