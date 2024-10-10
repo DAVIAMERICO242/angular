@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { env } from "../../../env";
@@ -23,7 +23,14 @@ export class GlobalService{
     }
 
     public getCities(){
-        this.http.get<City[]>(this.api).subscribe({
+        
+        const headers = new HttpHeaders({
+            'Cache-Control': 'no-cache, no-store, must-revalidate',  // Desativa o cache
+            'Pragma': 'no-cache',  // Para compatibilidade com navegadores antigos
+            'Expires': '0'  // Expira imediatamente
+        });
+
+        this.http.get<City[]>(this.api,{headers}).subscribe({
             next:(cities)=>{
                 this.citySubject.next(cities)
             },
