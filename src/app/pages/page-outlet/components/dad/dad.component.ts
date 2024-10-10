@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ChildComponent } from "../child/child.component";
 import { City, GlobalService} from '../../../../services/GlobalService';
 import { CommonModule } from '@angular/common';
@@ -10,6 +10,7 @@ import { ConfirmationService } from 'primeng/api';
 import { InheritedStyleComponent } from "../inherited-style/inherited-style.component";
 import { MultiSelectModule } from 'primeng/multiselect';
 import { LoadingButtonComponent } from "../../../../components/loading-button/loading-button.component";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dad',
@@ -19,17 +20,23 @@ import { LoadingButtonComponent } from "../../../../components/loading-button/lo
   templateUrl: './dad.component.html',
   styleUrl: './dad.component.css'
 })
-export class DadComponent implements OnInit {
+export class DadComponent implements OnInit,OnDestroy {
   public cities:City[] | undefined= undefined;
+
+  public serviceSubscription!:Subscription;
 
   public open:boolean = false;
 
   public loading:boolean = false;
 
   constructor(private globalService:GlobalService,private confirmationService:ConfirmationService){
-    this.globalService.city$.subscribe(city => {//toda vez que um next for executado vai cair aqui
+    this.serviceSubscription = this.globalService.city$.subscribe(city => {//toda vez que um next for executado vai cair aqui
       this.cities = city; // Atualiza o valor local para refletir na UI
     });
+  }
+  ngOnDestroy(): void {
+    console.log("COMPONENTE DESTRUIDO")
+    this.serviceSubscription.unsubscribe();
   }
 
   ngOnInit(): void {

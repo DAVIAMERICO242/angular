@@ -40,4 +40,8 @@ export class PageComponent {
    public navigateForms(){
     this.router.navigate(["/forms"])
    }
+
+   public navigateDiretivasEstruturais(){
+    this.router.navigate(["/diretivas_estruturais"])
+   }
 }
