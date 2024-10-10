@@ -14,7 +14,7 @@ export class ChildComponent {
 
   public cities:City[] | undefined= undefined;
 
-  constructor(private globalService:GlobalService){
+  constructor(private globalService:GlobalService){//herdado do componente pai
     this.globalService.city$.subscribe(city => {
       this.cities= city; // Atualiza o valor local para refletir na UI
     });
