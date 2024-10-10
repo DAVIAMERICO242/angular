@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PipePipe } from '../pipe.pipe';
+import { PipePipe } from '../../../../../pipes/pipe.pipe';
 
 @Component({
   selector: 'app-example-component',

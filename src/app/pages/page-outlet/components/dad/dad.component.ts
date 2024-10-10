@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ChildComponent } from "../child/child.component";
 import { City, GlobalService} from '../../../../services/GlobalService';
 import { CommonModule } from '@angular/common';
@@ -11,16 +11,19 @@ import { InheritedStyleComponent } from "../inherited-style/inherited-style.comp
 import { MultiSelectModule } from 'primeng/multiselect';
 import { LoadingButtonComponent } from "../../../../components/loading-button/loading-button.component";
 import { Subscription } from 'rxjs';
+import { SharedModule } from '../../../../shared.module';
+import { PrimeModule } from '../../../../prime/prime.module';
 
 @Component({
   selector: 'app-dad',
   standalone: true,
-  imports: [ChildComponent, CommonModule, TableModule, DialogModule, ButtonModule, ConfirmDialogModule, InheritedStyleComponent, MultiSelectModule, LoadingButtonComponent],
+  imports: [ChildComponent, SharedModule, PrimeModule, InheritedStyleComponent, LoadingButtonComponent],
   providers:[GlobalService,ConfirmationService],
   templateUrl: './dad.component.html',
   styleUrl: './dad.component.css'
 })
 export class DadComponent implements OnInit,OnDestroy {
+
   public cities:City[] | undefined= undefined;
 
   public serviceSubscription!:Subscription;

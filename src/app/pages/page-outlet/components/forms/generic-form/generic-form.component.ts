@@ -4,6 +4,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { LoadingButtonComponent } from "../../../../../components/loading-button/loading-button.component";
 import { CommonModule } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
+import { SharedModule } from '../../../../../shared.module';
+import { PrimeModule } from '../../../../../prime/prime.module';
 
 interface Tarefa{
   id:string;
@@ -18,7 +20,7 @@ interface FormModel{
 @Component({
   selector: 'app-generic-form',
   standalone: true,
-  imports: [FormsModule, MultiSelectModule, ReactiveFormsModule, LoadingButtonComponent,CommonModule,InputTextModule],
+  imports: [SharedModule, PrimeModule, LoadingButtonComponent],
   templateUrl: './generic-form.component.html',
   styleUrl: './generic-form.component.css'
 })

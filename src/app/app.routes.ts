@@ -17,32 +17,32 @@ export const routes: Routes = [
         children: [
             {
                 path: 'about',
-                component: PageOutletComponent
+                loadComponent:()=>import('./pages/page-outlet/page-outlet.component').then(m=>m.PageOutletComponent)
             },
             {
                 path: 'inheritance',
-                component: ParentComponent
+                loadComponent:()=>import('./pages/page-outlet/components/input-output/parent/parent.component').then(m=>m.ParentComponent)
             },
             {
                 path:'prime_ng',
-                component:PrimeNgComponent
+                loadComponent:()=>import('./pages/page-outlet/components/prime-ng/prime-ng/prime-ng.component').then(m=>m.PrimeNgComponent)
             },
             {
                 path:'pipes',
-                component:ExampleComponentComponent
+                loadComponent:()=>import('./pages/page-outlet/components/pipes/example-component/example-component.component').then(m=>m.ExampleComponentComponent)
             }
             ,
             {
                 path:'forms',
-                component:GenericFormComponent
+                loadComponent:()=>import('./pages/page-outlet/components/forms/generic-form/generic-form.component').then(m=>m.GenericFormComponent)
             },
             {
                 path:'diretivas_estruturais',
-                component:DiretivasEstruturaisComponent
+                loadComponent:()=>import('./pages/page-outlet/components/diretivas-estruturais/diretivas-estruturais.component').then(m=>m.DiretivasEstruturaisComponent)
             },
             {
                 path:'async_pipe',
-                component:AsyncPipeComponent
+                loadComponent:()=>import('./pages/page-outlet/components/async-pipe/async-pipe.component').then(m=>m.AsyncPipeComponent)
             }
         ]
     },
