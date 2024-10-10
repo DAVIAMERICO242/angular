@@ -4,6 +4,7 @@ import { RouteConfigLoadEnd, RouteConfigLoadStart, Router, RouterModule, RouterO
 import { PageComponent } from "./pages/page/page.component";
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     RouterOutlet,
     CommonModule,
     PageComponent,
-    RouterModule
+    RouterModule,
+    ProgressBarModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
