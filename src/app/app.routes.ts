@@ -8,6 +8,7 @@ import { PrimeNgComponent } from './pages/page-outlet/components/prime-ng/prime-
 import { ExampleComponentComponent } from './pages/page-outlet/components/pipes/example-component/example-component.component';
 import { GenericFormComponent } from './pages/page-outlet/components/forms/generic-form/generic-form.component';
 import { DiretivasEstruturaisComponent } from './pages/page-outlet/components/diretivas-estruturais/diretivas-estruturais.component';
+import { AsyncPipeComponent } from './pages/page-outlet/components/async-pipe/async-pipe.component';
 
 export const routes: Routes = [
     {
@@ -38,6 +39,10 @@ export const routes: Routes = [
             {
                 path:'diretivas_estruturais',
                 component:DiretivasEstruturaisComponent
+            },
+            {
+                path:'async_pipe',
+                component:AsyncPipeComponent
             }
         ]
     },

@@ -44,4 +44,8 @@ export class PageComponent {
    public navigateDiretivasEstruturais(){
     this.router.navigate(["/diretivas_estruturais"])
    }
+
+   public navigateAsyncPipe(){
+    this.router.navigate(["/async_pipe"])
+   }
 }
