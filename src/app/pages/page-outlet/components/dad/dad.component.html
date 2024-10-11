@@ -4,7 +4,7 @@
     <div>
         Quantidade de cidades no pai {{cities?.length}}
     </div>
-    <button class='mb-0' (click)="changeCidade()" [ngClass]="{
+    <button #button class='mb-0' (click)="changeCidade();logRef()" [ngClass]="{
         'bg-white':true,
         'text-black':true,
         'border-solid':true,

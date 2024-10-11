@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ChildComponent } from "../child/child.component";
 import { City, GlobalService} from '../../../../services/GlobalService';
 import { CommonModule } from '@angular/common';
@@ -24,6 +24,10 @@ import { PrimeModule } from '../../../../prime/prime.module';
 })
 export class DadComponent implements OnInit,OnDestroy {
 
+  @ViewChild(ChildComponent) childComponent!: ChildComponent;
+  @ViewChild('button') button!:ElementRef<HTMLInputElement>;
+
+
   public cities:City[] | undefined= undefined;
 
   public serviceSubscription!:Subscription;
@@ -37,6 +41,11 @@ export class DadComponent implements OnInit,OnDestroy {
       this.cities = city; // Atualiza o valor local para refletir na UI
     });
   }
+
+  logRef(){
+    console.log(this.button.nativeElement)
+  }
+
   ngOnDestroy(): void {
     console.log("COMPONENTE DESTRUIDO")
     this.serviceSubscription.unsubscribe();
