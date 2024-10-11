@@ -2,7 +2,7 @@
     <app-child>
     </app-child>
     <div>
-        Quantidade de cidades no pai {{cities?.length}}
+        Quantidade de cidades no pai {{cities.length}}
     </div>
     <button #button class='mb-0' (click)="changeCidade();logRef()" [ngClass]="{
         'bg-white':true,
@@ -27,7 +27,7 @@
 
     <p-confirmDialog />
     <p-dialog  header="Dados" [(visible)]="open" [modal]="true">
-        <p-table [tableStyle]="{'width':'400px'}" [value]="cities?.slice(0,20) || []">
+        <p-table [tableStyle]="{'width':'400px'}" [value]="cities.slice(0,20) || []">
             <ng-template pTemplate="header">
                 <tr>
                     <th>Id</th>

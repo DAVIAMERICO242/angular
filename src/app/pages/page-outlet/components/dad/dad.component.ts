@@ -28,7 +28,11 @@ export class DadComponent implements OnInit,OnDestroy {
   @ViewChild('button') button!:ElementRef<HTMLInputElement>;
 
 
-  public cities:City[] | undefined= undefined;
+  public city!:City;
+
+  public stringVar!:string;
+
+  public cities!:City[];
 
   public serviceSubscription!:Subscription;
 
@@ -52,6 +56,12 @@ export class DadComponent implements OnInit,OnDestroy {
   }
 
   ngOnInit(): void {
+    console.log("STRING NA MENSAGEM")
+    console.log(this.stringVar)
+    console.log("CITY NA MONTAGEM")
+    console.log(this.city)
+    console.log("CITIES NA MONTAGEM")
+    console.log(this.cities)
     this.globalService.getCities()
   }
 
